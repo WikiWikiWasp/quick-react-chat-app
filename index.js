@@ -10,11 +10,18 @@ const TEST_DATA = [
 ]
 
 class App extends React.Component{
+    constructor() {
+        super()
+        this.state = {
+            messages: TEST_DATA
+        }
+    }
+
     render(){
         return(
             <div className="app">
                 <Title />
-                <MessageList />
+                <MessageList messages={this.state.messages} />
                 <SendMessageForm />
             </div>
         )
